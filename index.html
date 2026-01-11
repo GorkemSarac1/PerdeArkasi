@@ -32,8 +32,8 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" data-page="explore">
-            <i class="fa-solid fa-compass"></i> Keşfet
+          <a class="nav-link" data-page="contact">
+            <i class="fa-solid fa-envelope"></i> İletişim
           </a>
         </li>
 
@@ -44,8 +44,8 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" data-page="contact">
-            <i class="fa-solid fa-envelope"></i> İletişim
+          <a class="nav-link" data-page="explore">
+            <i class="fa-solid fa-compass"></i> Keşfet
           </a>
         </li>
       </ul>
@@ -63,10 +63,10 @@
         <div class="section-content">
           <div class="hero-wrapper">
             <div class="netflix-slider">
-              <img src="src/fotos/Batman.jpg">
-              <img src="src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg">
-              <img src="src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg">
-              <img src="src/fotos/shutter-island.jpg">
+              <img src="src/fotos/Batman.jpg" data-movie="batman">
+              <img src="src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg" data-movie="interstellar">
+              <img src="src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg" data-movie="inception">
+              <img src="src/fotos/shutter-island.jpg" data-movie="shutter-island">
             </div>
           </div>
         </div>
@@ -175,28 +175,6 @@
     </section>
 
 
-    <!-- DİZİLER -->
-    <section class="page" id="contact">
-      <button class="nav-up-btn"><i class="fa-solid fa-chevron-up"></i></button>
-      <div class="contact-container">
-
-        <h1>İletişim</h1>
-        <p class="contact-desc">
-          Görüşlerin, önerilerin ve iş birlikleri için
-          Perdearkası ekibiyle iletişime geç.
-        </p>
-
-        <div class="contact-grid">
-          <div class="contact-box">📩 contact@perdearkasi.com</div>
-          <div class="contact-box">📷 Instagram / perdearkasi</div>
-          <div class="contact-box">🐦 X / Twitter</div>
-          <div class="contact-box">🎬 YouTube</div>
-        </div>
-
-      </div>
-      <button class="nav-down-btn"><i class="fa-solid fa-chevron-down"></i></button>
-    </section>
-
     <!-- HAKKIMIZDA -->
     <!-- HAKKIMIZDA -->
     <section class="page" id="about">
@@ -255,6 +233,29 @@
       <button class="nav-down-btn"><i class="fa-solid fa-chevron-down"></i></button>
     </section>
 
+    <!-- İLETİŞİM -->
+    <section class="page" id="contact">
+      <button class="nav-up-btn"><i class="fa-solid fa-chevron-up"></i></button>
+      <div class="contact-container">
+
+        <h1>İletişim</h1>
+        <p class="contact-desc">
+          Görüşlerin, önerilerin ve iş birlikleri için
+          Perdearkası ekibiyle iletişime geç.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-box">📩 contact@perdearkasi.com</div>
+          <div class="contact-box">📷 Instagram / perdearkasi</div>
+          <div class="contact-box">🐦 X / Twitter</div>
+          <div class="contact-box">🎬 YouTube</div>
+        </div>
+
+      </div>
+      <button class="nav-down-btn"><i class="fa-solid fa-chevron-down"></i></button>
+    </section>
+
+    <!-- KEŞFET -->
     <section class="page" id="explore">
       <button class="nav-up-btn"><i class="fa-solid fa-chevron-up"></i></button>
 
@@ -301,6 +302,7 @@
     <section class="page" id="detail">
 
       <section class="detail-hero">
+        <button class="detail-close-btn"><i class="fa-solid fa-xmark"></i></button>
         <img class="detail-poster" src="src/fotos/Batman.jpg" />
 
         <div class="detail-info">

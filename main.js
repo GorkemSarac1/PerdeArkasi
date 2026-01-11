@@ -119,17 +119,58 @@ function openDetail(movie) {
 
   const title = document.querySelector(".detail-info h1");
   const poster = document.querySelector(".detail-poster");
+  const galleryImgs = document.querySelectorAll(".detail-gallery img");
+
+  let titleText = "The Batman";
+  let posterSrc = "src/fotos/Batman.jpg";
+  let galleryImages = [
+    "src/fotos/Batman.jpg",
+    "src/fotos/shutter-island.jpg",
+    "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg"
+  ];
 
   if (movie === "interstellar") {
-    title.innerText = "Interstellar";
-    poster.src = "src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg";
+    titleText = "Interstellar";
+    posterSrc = "src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg";
+    galleryImages = [
+      "src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg",
+      "src/fotos/shutter-island.jpg",
+      "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg"
+    ];
   } else if (movie === "inception") {
-    title.innerText = "Inception";
-    poster.src = "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg";
-  } else {
-    title.innerText = "The Batman";
-    poster.src = "src/fotos/Batman.jpg";
+    titleText = "Inception";
+    posterSrc = "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg";
+    galleryImages = [
+      "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+      "src/fotos/Batman.jpg",
+      "src/fotos/shutter-island.jpg"
+    ];
+  } else if (movie === "shutter-island") {
+    titleText = "Shutter Island";
+    posterSrc = "src/fotos/shutter-island.jpg";
+    galleryImages = [
+      "src/fotos/shutter-island.jpg",
+      "src/fotos/Batman.jpg",
+      "src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg"
+    ];
   }
+
+  title.innerText = titleText;
+  poster.src = posterSrc;
+  galleryImgs.forEach((img, index) => {
+    if (galleryImages[index]) {
+      img.src = galleryImages[index];
+    }
+  });
+}
+
+/* Detail Close Button */
+const detailCloseBtn = document.querySelector(".detail-close-btn");
+if (detailCloseBtn) {
+  detailCloseBtn.addEventListener("click", () => {
+    document.getElementById("detail").classList.remove("active");
+    goToPage(0); // Ana sayfaya geri dön
+  });
 }
 
 
