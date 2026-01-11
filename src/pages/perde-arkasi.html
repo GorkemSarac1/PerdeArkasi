@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perdearkası</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="#" class="nav-logo">
+        <h2 class="logo-text">Perdearkası</h2>
+      </a>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a class="nav-link" data-page="home">
+            <i class="fa-solid fa-house"></i> Anasayfa
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" data-page="films">
+            <i class="fa-solid fa-film"></i> Filmler / Diziler
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" data-page="explore">
+            <i class="fa-solid fa-compass"></i> Keşfet
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" data-page="about">
+            <i class="fa-solid fa-circle-info"></i> Hakkımızda
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" data-page="contact">
+            <i class="fa-solid fa-envelope"></i> İletişim
+          </a>
+        </li>
+      </ul>
+
+
+    </nav>
+  </header>
+
+  <main id="pages">
+
+    <!-- ANASAYFA -->
+    <section class="page active" id="home">
+
+      <section class="hero-section">
+        <div class="section-content">
+          <div class="hero-wrapper">
+            <div class="netflix-slider">
+              <img src="../fotos/Batman.jpg">
+              <img src="../fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg">
+              <img src="../fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg">
+              <img src="../fotos/shutter-island.jpg">
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- FİLMLER -->
+    <section class="page" id="films">
+      <button class="nav-up-btn"><i class="fa-solid fa-chevron-up"></i></button>
+
+      <div class="catalog-container">
+
+        <!-- BAŞLIK -->
+        <div class="catalog-header">
+          <h1>Filmler</h1>
+          <p>Senin için seçilen, öne çıkan ve popüler filmler</p>
+        </div>
+
+        <!-- KATEGORİ -->
+        <div class="catalog-section">
+          <h2>En Popüler Filmler</h2>
+
+          <div class="catalog-grid">
+            <div class="movie-card">
+              <img src="../fotos/a.jpg">
+              <span>The Monkey</span>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <span>8.1</span>
+              </div>
+            </div>
+
+            <div class="movie-card">
+              <img src="../fotos/b.jpg">
+              <span>28 Years Later</span>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <span>8.1</span>
+              </div>
+            </div>
+
+            <div class="movie-card">
+              <img src="../fotos/c.jpg">
+              <span>Captain America: Brave New World</span>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <span>8.1</span>
+              </div>
+            </div>
+
+            <div class="movie-card">
+              <img src="../fotos/d.jpg">
+              <span>Der Tiger</span>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <span>8.1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KATEGORİ -->
+        <div class="catalog-section">
+          <h2>En Popüler Diziler</h2>
+
+          <div class="catalog-grid">
+            <div class="movie-card">
+              <img src="../fotos/e.jpg">
+              <h3>IT: Welcome to Derry</h3>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <span>8.1</span>
+              </div>
+            </div>
+            <div class="movie-card">
+              <img src="../fotos/f.jpg">
+              <h3>Stranger Things</h3>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <span>8.1</span>
+              </div>
+            </div>
+            <div class="movie-card">
+              <img src="../fotos/g.jpg">
+              <h3>Spartacus: House Of Ashur</h3>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <span>8.1</span>
+              </div>
+            </div>
+            <div class="movie-card">
+              <img src="../fotos/k.jpg">
+              <h3>From</h3>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <span>8.1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="nav-down-btn"><i class="fa-solid fa-chevron-down"></i></button>
+    </section>
+
+
+    <!-- DİZİLER -->
+    <section class="page" id="contact">
+      <button class="nav-up-btn"><i class="fa-solid fa-chevron-up"></i></button>
+      <div class="contact-container">
+
+        <h1>İletişim</h1>
+        <p class="contact-desc">
+          Görüşlerin, önerilerin ve iş birlikleri için
+          Perdearkası ekibiyle iletişime geç.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-box">📩 contact@perdearkasi.com</div>
+          <div class="contact-box">📷 Instagram / perdearkasi</div>
+          <div class="contact-box">🐦 X / Twitter</div>
+          <div class="contact-box">🎬 YouTube</div>
+        </div>
+
+      </div>
+      <button class="nav-down-btn"><i class="fa-solid fa-chevron-down"></i></button>
+    </section>
+
+    <!-- HAKKIMIZDA -->
+    <!-- HAKKIMIZDA -->
+    <section class="page" id="about">
+      <button class="nav-up-btn"><i class="fa-solid fa-chevron-up"></i></button>
+      <div class="about-container">
+
+        <!-- HERO -->
+        <div class="about-hero">
+          <h1>Perdearkası</h1>
+          <p>
+            Sinema ve dizileri yalnızca izlenen içerikler değil,
+            birer kültür alanı olarak ele alan dijital bir platform.
+          </p>
+        </div>
+
+        <!-- ÖZELLİK KUTULARI -->
+        <div class="about-features">
+
+          <div class="feature-card">
+            <h3>Film Arşivi</h3>
+            <p>Kürasyonlu ve kaliteli film seçkisi.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Dizi Dünyası</h3>
+            <p>Popülerden gizli yapımlara uzanan içerikler.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Keşfet</h3>
+            <p>Türlere ve ruh haline göre öneriler.</p>
+          </div>
+
+        </div>
+
+        <!-- METİN -->
+        <div class="about-text">
+          <h2>Neden Perdearkası?</h2>
+          <p>
+            İçeriğin ön planda olduğu, sade ve sezgisel
+            bir sinema deneyimi sunar.
+          </p>
+        </div>
+
+        <!-- SOSYAL / TILE -->
+        <div class="about-tiles">
+          <div class="tile"><i class="fa-brands fa-instagram"></i></div>
+          <div class="tile"><i class="fa-brands fa-x-twitter"></i></div>
+          <div class="tile"><i class="fa-brands fa-youtube"></i></div>
+          <div class="tile"><i class="fa-solid fa-envelope"></i></div>
+        </div>
+
+
+      </div>
+
+      <button class="nav-down-btn"><i class="fa-solid fa-chevron-down"></i></button>
+    </section>
+
+    <section class="page" id="explore">
+      <button class="nav-up-btn"><i class="fa-solid fa-chevron-up"></i></button>
+
+      <div class="explore-container">
+
+        <div class="explore-header">
+          <h1>Keşfet</h1>
+          <p>Ruh haline, türe ve popülerliğe göre seçilmiş içerikler</p>
+        </div>
+
+        <div class="explore-grid">
+
+          <div class="explore-card">
+            <h3>Karanlık & Gerilim</h3>
+            <span>Batman, Se7en, Prisoners</span>
+          </div>
+
+          <div class="explore-card">
+            <h3>Bilim Kurgu</h3>
+            <span>Interstellar, Arrival, Blade Runner</span>
+          </div>
+
+          <div class="explore-card">
+            <h3>Psikolojik</h3>
+            <span>Shutter Island, Black Swan</span>
+          </div>
+
+          <div class="explore-card">
+            <h3>Kült Yapımlar</h3>
+            <span>Fight Club, Pulp Fiction</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <button class="nav-down-btn"><i class="fa-solid fa-chevron-down"></i></button>
+    </section>
+
+
+
+
+    <!-- FİLM DETAY -->
+    <section class="page" id="detail">
+
+      <section class="detail-hero">
+        <img class="detail-poster" src="../fotos/Batman.jpg" />
+
+        <div class="detail-info">
+          <h1>The Batman</h1>
+          <p>
+            Gotham’ın karanlık yüzü…
+            Dedektiflik, suç ve kaos.
+          </p>
+          <button class="play-btn">▶ İzle</button>
+        </div>
+      </section>
+
+      <section class="detail-gallery">
+        <img src="../fotos/Batman.jpg">
+        <img src="../fotos/shutter-island.jpg">
+        <img src="../fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg">
+      </section>
+
+    </section>
+
+
+  </main>
+
+  <script src="../components/main.js"></script>
+</body>
+
+</html>
