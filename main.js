@@ -131,13 +131,13 @@ function openDetail(movie) {
 
   if (movie === "interstellar") {
     title.innerText = "Interstellar";
-    poster.src = "foto/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg";
+    poster.src = "src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg";
   } else if (movie === "inception") {
     title.innerText = "Inception";
-    poster.src = "foto/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg";
+    poster.src = "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg";
   } else {
     title.innerText = "The Batman";
-    poster.src = "foto/Batman.jpg";
+    poster.src = "src/fotos/Batman.jpg";
   }
 }
 
