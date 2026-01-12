@@ -70,18 +70,28 @@ navLinks.forEach(link => {
   });
 });
 
-/* POSTER CLICK → PAGE SWITCH */
+/* POSTER CLICK → DETAIL OVERLAY */
 posters.forEach(poster => {
   poster.addEventListener("click", () => {
-    document.querySelector(".page.active")
-      .classList.remove("active");
-
-    document.getElementById("detail")
-      .classList.add("active");
-
-    window.scrollTo(0, 0);
+    document.getElementById("detail").classList.add("active");
   });
 });
+
+/* DETAIL CLOSE BUTTON */
+const detailCloseBtn = document.querySelector(".detail-close-btn");
+if (detailCloseBtn) {
+  detailCloseBtn.addEventListener("click", () => {
+    document.getElementById("detail").classList.remove("active");
+  });
+}
+
+/* ESC KEY TO CLOSE DETAIL */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.getElementById("detail").classList.remove("active");
+  }
+});
+
 
 /* SCROLL PARALLAX */
 window.addEventListener("scroll", () => {
@@ -114,63 +124,21 @@ document.querySelectorAll(".movie-card, .netflix-slider img").forEach(item => {
 });
 
 function openDetail(movie) {
-  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   document.getElementById("detail").classList.add("active");
 
   const title = document.querySelector(".detail-info h1");
   const poster = document.querySelector(".detail-poster");
-  const galleryImgs = document.querySelectorAll(".detail-gallery img");
-
-  let titleText = "The Batman";
-  let posterSrc = "src/fotos/Batman.jpg";
-  let galleryImages = [
-    "src/fotos/Batman.jpg",
-    "src/fotos/shutter-island.jpg",
-    "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg"
-  ];
 
   if (movie === "interstellar") {
-    titleText = "Interstellar";
-    posterSrc = "src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg";
-    galleryImages = [
-      "src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg",
-      "src/fotos/shutter-island.jpg",
-      "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg"
-    ];
+    title.innerText = "Interstellar";
+    poster.src = "foto/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg";
   } else if (movie === "inception") {
-    titleText = "Inception";
-    posterSrc = "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg";
-    galleryImages = [
-      "src/fotos/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
-      "src/fotos/Batman.jpg",
-      "src/fotos/shutter-island.jpg"
-    ];
-  } else if (movie === "shutter-island") {
-    titleText = "Shutter Island";
-    posterSrc = "src/fotos/shutter-island.jpg";
-    galleryImages = [
-      "src/fotos/shutter-island.jpg",
-      "src/fotos/Batman.jpg",
-      "src/fotos/Interstellar-IMAX-Poster-Wallpaper-1152x720-960x600.jpg"
-    ];
+    title.innerText = "Inception";
+    poster.src = "foto/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg";
+  } else {
+    title.innerText = "The Batman";
+    poster.src = "foto/Batman.jpg";
   }
-
-  title.innerText = titleText;
-  poster.src = posterSrc;
-  galleryImgs.forEach((img, index) => {
-    if (galleryImages[index]) {
-      img.src = galleryImages[index];
-    }
-  });
-}
-
-/* Detail Close Button */
-const detailCloseBtn = document.querySelector(".detail-close-btn");
-if (detailCloseBtn) {
-  detailCloseBtn.addEventListener("click", () => {
-    document.getElementById("detail").classList.remove("active");
-    goToPage(0); // Ana sayfaya geri dön
-  });
 }
 
 

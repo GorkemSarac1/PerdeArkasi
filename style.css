@@ -3,7 +3,45 @@ body {
   overflow-x: hidden;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cinzel:wght@400;600;700&display=swap');
+/* Futura PT Font */
+@font-face {
+  font-family: 'Futura PT';
+  src: url('fonts/FuturaPT-Book.woff2') format('woff2'),
+    url('fonts/FuturaPT-Book.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('fonts/FuturaPT-Medium.woff2') format('woff2'),
+    url('fonts/FuturaPT-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('fonts/FuturaPT-Demi.woff2') format('woff2'),
+    url('fonts/FuturaPT-Demi.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('fonts/FuturaPT-Bold.woff2') format('woff2'),
+    url('fonts/FuturaPT-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -13,8 +51,8 @@ body {
 
 
 :root {
-  --font-sans: 'Futura Pt', 'Futura', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: 'Cinzel', serif;
+  --font-sans: 'Futura PT', 'Outfit', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Futura PT', 'Outfit', sans-serif;
 
   --bg: #0A0A0A;
   --surface: #121212;
@@ -256,41 +294,67 @@ header {
 #contact,
 #films {
   background: linear-gradient(to bottom, #8B0000, #000000);
-  position: relative;
 }
 
-#about::before,
-#explore::before,
-#contact::before {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
-  height: 80px;
-  border: 3px solid #FFFFFF;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10;
+/* Ortalama için parent sayfalar */
+#about,
+#explore,
+#contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 /* ======================
-   DETAIL PAGE
+   DETAIL PAGE - OVERLAY
 ====================== */
 
-#detail {
-  background: #0a0a0a;
-  overflow-y: auto;
-}
-
-.detail-bg {
+.detail-overlay {
   position: fixed;
   inset: 0;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  transform: translateX(var(--x));
+  background: #0a0a0a;
+  overflow-y: auto;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.05);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.detail-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.detail-close-btn {
+  position: fixed;
+  top: 100px;
+  right: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.detail-close-btn:hover {
+  background: rgba(255, 64, 64, 0.8);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: rotate(90deg);
+}
+
+#detail {
+  perspective: 1200px;
 }
 
 .detail-hero {
@@ -300,31 +364,7 @@ header {
   gap: 80px;
   padding: 120px 80px;
   position: relative;
-}
-
-.detail-close-btn {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 100;
-  transition: all 0.3s ease;
-}
-
-.detail-close-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-  border-color: rgba(255, 255, 255, 0.8);
-  color: #fff;
+  transform-style: preserve-3d;
 }
 
 .detail-poster {
@@ -350,25 +390,21 @@ header {
   border: none;
   font-size: 1rem;
   cursor: pointer;
+  background: var(--accent-2);
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
-/* 3D sahne */
-#detail {
-  perspective: 1200px;
-  overflow: hidden;
-}
-
-/* arka plan parallax */
-.detail-hero {
-  position: relative;
-  transform-style: preserve-3d;
+.play-btn:hover {
+  background: #ff6060;
+  transform: scale(1.05);
 }
 
 /* galeri */
 .detail-gallery {
   display: flex;
   gap: 24px;
-  padding: 60px 80px;
+  padding: 80px;
   justify-content: center;
   transform-style: preserve-3d;
 }
@@ -385,6 +421,7 @@ header {
   transform: translateZ(80px) rotateY(-8deg);
   box-shadow: 0 40px 80px rgba(0, 0, 0, .7);
 }
+
 
 /* ABOUT WRAPPER */
 .about-wrapper {
@@ -439,31 +476,35 @@ header {
 }
 
 
-/* 3D TILE GRID */
+/* SOCIAL FOOTER - Çerçevenin dışında */
 .about-tiles {
-  display: grid;
-  grid-template-columns: repeat(4, 100px);
-  gap: 20px;
-  margin-top: 60px;
-  transform-style: preserve-3d;
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
   justify-content: center;
+  align-items: center;
 }
 
 .tile {
-  height: 100px;
-  border-radius: 18px;
-  background: linear-gradient(145deg, #141414, #0b0b0b);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .6);
-  transform-style: preserve-3d;
-  transition: transform .4s cubic-bezier(.2, .9, .3, 1);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(20, 20, 20, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  transition: all .3s ease;
+  font-size: 1rem;
 }
 
 .tile:hover {
-  transform: rotateX(12deg) rotateY(-12deg) translateZ(35px);
+  background: rgba(30, 30, 30, 0.95);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .6);
 }
 
 .about-wrapper::after {
@@ -508,10 +549,13 @@ header {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 60px 40px 100px 40px;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 60px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  position: relative;
 }
 
 /* HERO */
@@ -704,14 +748,17 @@ header {
 }
 
 .page#about {
-  margin-bottom: 0;
+  margin-bottom: 80px;
 }
 
 /* === EXPLORE === */
 .explore-container {
   max-width: 1100px;
-  margin: auto;
-  padding: 120px 32px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  position: relative;
 }
 
 .explore-header {
@@ -766,12 +813,6 @@ header {
   opacity: 0.7;
 }
 
-.tile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-}
 
 .movie-info {
   display: flex;
@@ -812,8 +853,11 @@ header {
 .contact-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 60px 40px;
   text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  position: relative;
 }
 
 .contact-container h1 {
